@@ -32,13 +32,17 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "formulario.apps.FormularioConfig",
+    "crispy_forms",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 ]
+
+CRISPY_TEMPLATE_PACK = 'boostrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

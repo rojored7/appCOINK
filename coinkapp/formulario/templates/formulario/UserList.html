@@ -1,0 +1,31 @@
+{% extends 'formulario/UserIndex.html' %}
+
+{% block  content %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Ciudad</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for users in users %}
+
+            <tr>
+            <th scope="row"> {{ users.id }} </th>
+            <td>{{ users.name_user }}</td>
+            <td>{{ users.emai }}</td>
+            <td>{{ users.ciudad }}</td>
+            </tr>
+
+        {% endfor %}
+
+
+        </tbody>
+    </table>  
+
+{% endblock  %}
