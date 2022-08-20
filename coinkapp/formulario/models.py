@@ -2,7 +2,7 @@ import email
 from statistics import mode
 from django.db import models
 
-class Usuario(models.Model):
+class User(models.Model):
     """_summary_
 
     Args:
@@ -11,7 +11,17 @@ class Usuario(models.Model):
         Name: With a maximum space of 100 characters
         Email: With a maximum space of 100 characters
         city: With a maximum space of 100 characters
+
+    Returns:
+        _type_: _description_
+        
+        with the __str__ function, the user's name is returned when the user is asked for it.
     """
     name_user = models.CharField(max_length=100)
     emai = models.CharField(max_length=100)
     ciudad = models.CharField(max_length=100)
+    
+    
+    def __str__(self) :
+
+        return self.name_user
