@@ -1,8 +1,24 @@
 from django.shortcuts import render
+from django.http import HttpResponse, HttpRequest
+from django.views import generic
 
-# Create your views here.
+from .models import User
+from .forms import FormularioUsuarios
 
-from django.http import HttpResponse
-
-def index(request):
-    return HttpResponse("Proceso inicia de prueba de creacion del archivo")
+class FormularioUserView(HttpRequest):
+    
+    def index(request):
+        user = FormularioUsuarios()
+        return render(request,"formulario/UserIndex.html",{
+            "form": user
+        })
+    
+    def procesar_formulario(request):
+        user = FormularioUsuarios()
+        if user.is_valid():
+            user.save()
+            user = FormularioUsuarios()
+        
+        return render(request, "formulario/formulario.html",{
+            "form": user, "mensaje": "OK"
+        })
