@@ -51,6 +51,17 @@ class FormularioUserView(HttpRequest):
         })
         
     def UserList(request):
+        """_summary_
+
+        Args:
+            request (_type_): _description_
+            the variable lists is used to call the User object, with all its methods. In this way we obtain 
+            all the values that are in the variable 
+
+        Returns:
+            _type_: _description_
+            It is rendered using the newly designed template 
+        """
         listas = User.objects.all()
         return render(request,"formulario/UserList.html",{
             "users": listas

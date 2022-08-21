@@ -2,6 +2,10 @@
 
 {% block  content %}
 
+    <h1>Registro Usuarios ☻</h1>
+    <div class="row col-12 justify-content-end mb-2 pr-0">
+        <a class="btn btn-success col-md-3" href="/formulario/procesar_formulario/">Agregar Nuevo </a>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -9,6 +13,8 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Email</th>
                 <th scope="col">Ciudad</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +26,8 @@
             <td>{{ users.name_user }}</td>
             <td>{{ users.emai }}</td>
             <td>{{ users.ciudad }}</td>
+            <td><a class="btn btn-warning" href = "#">Editar </a></td>
+            <td><a class="btn btn-danger" href = "#">Eliminar </a></td>
             </tr>
 
         {% endfor %}
