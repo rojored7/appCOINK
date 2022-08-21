@@ -66,4 +66,28 @@ class FormularioUserView(HttpRequest):
         return render(request,"formulario/UserList.html",{
             "users": listas
             },)
-        
+    
+    
+    def delete(request, id_user):
+        """_summary_
+
+        Args:
+            request (_type_): _description_
+            id_user (_type_): _description_
+            The delate method is created in order to remove incorrect records, it is important to pass two parameters
+            to this method, the request parameter and the id_user parameter to remove the user.
+
+        Returns:
+            _type_: _description_
+            the variable lists is used to call the User object, with all its methods. In this way we obtain 
+            all the values that are in the variable 
+            
+        """
+        listas = User.objects.get(pk=id_user)
+        listas.delete()
+        listas = User.objects.all()
+        return render(request, "formulario/UserList.html",
+                      {
+            "users": listas
+            })
+            

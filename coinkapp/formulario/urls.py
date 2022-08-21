@@ -7,5 +7,6 @@ urlpatterns = [
     path("", views.FormularioUserView.index, name="index"),
     path("procesar_formulario/", views.FormularioUserView.procesar_formulario, name="form"),
     path("SaveUser/", views.FormularioUserView.procesar_formulario, name="save"),
-    path("UserList/",views.FormularioUserView.UserList, name="list")
+    path("UserList/",views.FormularioUserView.UserList, name="list"),
+    path("UserDelete/<int:id_user>",views.FormularioUserView.delete, name="delete")
 ]
